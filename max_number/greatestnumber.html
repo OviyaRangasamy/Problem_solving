@@ -1,0 +1,18 @@
+<script>
+
+const arr = [1,2,34,54,6,78];
+console.log(Array.isArray(arr))
+
+function findmax(arr){
+var maxval = 0;
+
+for (let i=0; i<(arr.length)-1; i++){
+    if (arr[i] < arr[i+1]){
+        maxval = arr[i+1];
+    }    
+}
+return(maxval);
+}
+
+console.log("The maximum number is",findmax(arr));
+</script>
