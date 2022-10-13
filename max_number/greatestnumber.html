@@ -1,7 +1,13 @@
 <script>
 
 const arr = [1,2,34,54,6,78];
-console.log(Array.isArray(arr))
+// console.log(Array.isArray(arr))
+if (Array.isArray(arr) === true){
+    console.log("The maximum number is",findmax(arr));
+}
+else{
+    console.log("Enter the input in array")
+}
 
 function findmax(arr){
 var maxval = 0;
