@@ -1,0 +1,19 @@
+<script>
+
+    function palindrome(str) {
+        var org_str = str;
+        var emp_str = "";
+        for (let i = str.length; i > 0; i--) {
+            emp_str += str[i - 1];
+        }
+        console.log(emp_str);
+        if (emp_str === org_str) {
+            return ("palindrome");
+        }
+        return ("not palindrome")
+
+    }
+
+    console.log(palindrome("malayalam"));
+    console.log(palindrome("zone"));
+</script>
