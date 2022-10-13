@@ -1,0 +1,47 @@
+<script>
+    arr = [];
+
+    function addLastElem(element) {
+        arr.push(element);
+    }
+
+    function removeLastElem() {
+        arr.pop();
+    }
+
+    function addFirstElem(element) {
+        arr.unshift(element);
+    }
+
+    function removeFirstElem() {
+        arr.shift();
+    }
+
+    function updateElem(index, element) {
+        arr[index] = element;
+    }
+
+    // addLastElem(10);
+    // addFirstElem(30);
+    // addFirstElem(20);
+    // console.log(arr);
+
+    // removeFirstElem();
+    // removeLastElem();
+    // console.log(arr);
+    // updateElem(5,"baby");
+    // console.log(arr);
+
+    for (let i = 0; i < 10; i++) {
+        addFirstElem(i + 1);
+    }
+    removeFirstElem();
+    removeLastElem();
+    updateElem(5,"baby");
+
+    var b = localStorage.setItem("arr", [arr])
+    localStorage.getItem(b);
+
+
+
+</script>
