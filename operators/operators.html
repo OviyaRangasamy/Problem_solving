@@ -1,0 +1,98 @@
+<script>
+    var a = 10;
+    var b = 20;
+    // arithmetic operators
+
+    function arithmetic() {
+        var sum = a + b;
+        var sub = b - a;
+        var pro = a * b;
+        var div = b / a;
+        var mod = b % a;
+        var pow = a ** 2;
+
+        console.log(`
+        sum:${sum},
+        subtraction:${sub},
+        product:${pro},
+        division:${div},
+        modulus:${mod},
+        power:${pow}
+        `)
+    }
+
+    // // assignment operators
+    function assignment() {
+        a += b;
+        console.log("a += b",a)
+        a -= b;
+        console.log("a -= b",a)
+        a *= b;
+        console.log("a *= b",a)
+        a /= b;
+        console.log("a /= b",a)
+        b %= a;
+        console.log("b %= a",b)
+        b **= 2;
+        console.log("a**=2",a)
+       
+    }
+    // // comparison operators
+    function comparison() {
+        if (a > b) {
+            console.log(a, "is greater");
+        }
+
+        else {
+            console.log(b, "is greater");
+        }
+
+        if (a < b) {
+            console.log(a, "is lesser");
+        }
+
+        else {
+            console.log(b, "is lesser");
+        }
+
+        if (a == "10") {
+            console.log("data equal datatype different");
+        }
+
+        else {
+            console.log("data different datatype different");
+        }
+
+        if (a === "10") {
+            console.log("data equal datatype different - not equal");
+        }
+
+        else if (a === 10) {
+            console.log("data same datatype same - equal");
+        }
+
+        else {
+            console.log("data different datatype different");
+        }
+
+        var ternary = a >= b? "a is greater" : "b is greater";
+        console.log(ternary)
+    }
+
+    function logical(){
+        if(a>5 && b>10){
+            console.log("passed");
+        }
+        else if(a<5 || b>a ){
+            console.log("partially passed")
+        }
+        else if(!(a === true)){
+            console.log("failed")
+        }
+    }
+
+arithmetic()
+assignment()
+comparison()
+logical()
+</script>
