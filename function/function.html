@@ -1,0 +1,47 @@
+<script>
+    //normal function
+    function add() {
+        console.log("3");
+    }
+    add()
+    //anonymous function
+    var a = function () {
+        console.log("9");
+    }
+    const s = function (a, b) {
+        console.log("6");
+    }
+    let m = function (a, b) {
+        console.log("2");
+    }
+
+    a()
+    s(2,5)
+    m(3,4)
+    //arrow function
+    let o = () => {
+        console.log("let arrow");
+    }
+    var q = () => {
+        console.log("var arrow");
+    }
+    const t = () => {
+        console.log("const arrow");
+    }
+
+    o()
+    q()
+    t();
+    //immediate invoked function
+    (() => {
+        let a = "baby";
+        console.log("butterfly")
+    })
+        ();
+    (function (a, b) {
+        let m = "march";
+        console.log("black butterfly")
+    })
+        ();
+
+</script>
