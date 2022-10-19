@@ -1,0 +1,16 @@
+<script>
+    const object_detail = {
+        name: "Oviya",
+        city: "Cbe",
+    }
+const seal_val = Object.seal(object_detail);
+console.log(seal_val);
+delete object_detail;
+console.log(object_detail);
+
+object_detail.name = "Tarun";
+console.log(object_detail);
+
+console.log(Object.isSealed(object_detail));
+
+</script>

@@ -1,0 +1,14 @@
+<script>
+        const object_detail = {
+        name:"Oviya",
+        city:"Cbe",
+    }
+
+
+    const freeze_val = Object.freeze(object_detail);
+
+    object_detail.name = "Tarun";
+    delete object_detail.name;
+    console.log(freeze_val);
+    console.log(Object.isFrozen(object_detail));
+</script>
