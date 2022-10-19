@@ -1,0 +1,20 @@
+<script>
+    Object.prototype.hasKeyproperty = function (key) {
+        return (this[key]) ? true : false;
+    }
+    
+    const objectDetail = {
+        name: "Oviya",
+        city: "CBE",
+    }
+
+    const object2 = {
+        name: "Tarun",
+        age: "15",
+    }
+
+    console.log(objectDetail.hasKeyproperty("name"));
+    console.log(object2.hasKeyproperty("city"));
+
+
+</script>
