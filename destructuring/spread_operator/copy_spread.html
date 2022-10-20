@@ -1,0 +1,14 @@
+<script>
+    const objectDetail = {
+        name: "peacock",
+        species: "bird",
+        uniqueness: "feathers",
+    }
+
+    const duplicate = { ...objectDetail }
+    delete duplicate.uniqueness;
+    console.log("@OR Original element",objectDetail);
+    console.log("@OR Copied element",duplicate);
+    
+
+</script>
