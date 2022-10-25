@@ -1,0 +1,52 @@
+<script>
+    var obj = {
+        a: {
+            b: {
+                c: 12,
+                j: false
+            },
+            k: null
+        }
+    };
+
+    function findPath(obj, path) {
+
+        let arr = path.split(".") // string is converted to array
+        let temp = { ...obj }  //obj is copied to the variable temp using spread operator
+        for (let i = 0; i < arr.length; i++) {
+
+            current_val = arr[i]
+
+            if (temp.hasOwnProperty(current_val) === true) {
+                if (typeof (temp[arr[i]]) === "object" && temp[arr[i]] !== null) {
+
+                    temp = { ...temp[current_val] } //temp holda the next value
+
+                    if (i === arr.length - 1) {
+                        return (temp); // when i holds the last-1 value it will return the object value
+                    }
+                }
+                else {
+                    if (i === arr.length - 1) {
+                        return (temp[current_val]); 
+                    }
+                }
+            }
+            else {
+                return undefined;
+            }
+        }
+    }
+
+
+    console.log(findPath(obj, 'a.b.c')); // 12
+    console.log(findPath(obj, 'a.b')); // {c: 12, j: false}
+    console.log(findPath(obj, 'a.b.d')); // undefined
+    console.log(findPath(obj, 'a.c')); // undefined
+    console.log(findPath(obj, 'a.b.c.d')); // undefined
+    console.log(findPath(obj, 'a.b.c.d.e')); // undefined
+    console.log(findPath(obj, 'a.b.j')); //false
+    console.log(findPath(obj, 'a.b.j.k')); //undefined
+    console.log(findPath(obj, 'a.k')); //null
+
+</script>
