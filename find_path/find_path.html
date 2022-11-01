@@ -20,7 +20,7 @@
             if (temp.hasOwnProperty(current_val) === true) {
                 if (typeof (temp[arr[i]]) === "object" && temp[arr[i]] !== null) {
 
-                    temp = { ...temp[current_val] } //temp holda the next value
+                    temp = { ...temp[current_val] } //temp holds the next value
 
                     if (i === arr.length - 1) {
                         return (temp); // when i holds the last-1 value it will return the object value
