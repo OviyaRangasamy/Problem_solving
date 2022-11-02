@@ -1,5 +1,7 @@
 <script>
     let str = "Hello my name is Ankit Jain & i'm from Morena";
+    
+    // method:1
     function longest_word(str) {
         let split_arr = str.split(" ");
         let obj = {}
@@ -20,6 +22,8 @@
 
     console.log(longest_word(str));
 
+    
+    // method:2
     function longest_wordV1(str){
         let split_arr = str.split(" ");
         let temp = split_arr[0];
@@ -33,6 +37,8 @@
 
     console.log(longest_wordV1(str));
 
+    
+    // method:3
     function longest_wordV2(str){
         let split_arr = str.split(" ");
         let temp = split_arr[0];
@@ -44,6 +50,8 @@
     }
     console.log(longest_wordV2(str));
 
+    
+    // method:4
     function longest_wordV3(str){
         let split_arr = str.split(" ");
         let temp = split_arr[0];
