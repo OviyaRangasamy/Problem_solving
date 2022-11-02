@@ -1,0 +1,55 @@
+<script>
+    let str = "Hello my name is Ankit Jain & i'm from Morena";
+    function longest_word(str) {
+        let split_arr = str.split(" ");
+        let obj = {}
+        let max = 0
+        let word = ""
+        for (let i of split_arr) {
+            if (obj.hasOwnProperty(i) === false) {
+                obj[i] = i.length;
+            }
+        }
+        for (let i in obj) {
+            if (obj[i] > max) {
+                word = i;
+            }
+        }
+        return(word);
+    }
+
+    console.log(longest_word(str));
+
+    function longest_wordV1(str){
+        let split_arr = str.split(" ");
+        let temp = split_arr[0];
+        for (let i of split_arr){
+            if(i.length > temp.length){
+                temp = i;
+            }
+        }
+        return(temp);
+    }
+
+    console.log(longest_wordV1(str));
+
+    function longest_wordV2(str){
+        let split_arr = str.split(" ");
+        let temp = split_arr[0];
+        let new_arr = split_arr.filter((item)=>{
+            item.length > temp.length;
+            temp = item;    
+        })
+        return(temp)
+    }
+    console.log(longest_wordV2(str));
+
+    function longest_wordV3(str){
+        let split_arr = str.split(" ");
+        let temp = split_arr[0];
+        let new_arr = split_arr.filter((item)=> item.length > temp.length)
+        return(new_arr.toString());
+    }
+    console.log(longest_wordV3(str));
+
+</script>
