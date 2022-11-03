@@ -1,0 +1,124 @@
+<script>
+    const users = [
+        {
+            id: 1,
+            name: "Ankit Jain",
+        },
+        {
+            id: 2,
+            name: "Shankar Sahu",
+        },
+        {
+            id: 3,
+            name: "Akash Kushwaha",
+        },
+    ];
+
+    const orders = [
+        {
+            orderId: 101,
+            userId: 1,
+            productId: 123,
+            productName: "Apple iPhone 14 Pro Max",
+        },
+        {
+            orderId: 102,
+            userId: 1,
+            productId: 124,
+            productName: "Apple MacBook Pro",
+        },
+        {
+            orderId: 103,
+            userId: 1,
+            productId: 125,
+            productName: "Apple iWatch 7 series",
+        },
+        {
+            orderId: 104,
+            userId: 2,
+            productId: 126,
+            productName: "Samsung S22",
+        },
+    ];
+
+    const final = [
+        {
+            userId: 1,
+            userName: "Ankit Jain",
+            orders: [
+                {
+                    orderId: 101,
+                    productId: 123,
+                    productName: "Apple iPhone 14 Pro Max",
+                },
+                {
+                    orderId: 102,
+                    productId: 124,
+                    productName: "Apple MacBook Pro",
+                },
+                {
+                    orderId: 103,
+                    productId: 125,
+                    productName: "Apple iWatch 7 series",
+                },
+            ],
+        },
+        {
+            userId: 2,
+            userName: "Shankar Sahu",
+            orders: [
+                {
+                    orderId: 104,
+                    userId: 2,
+                    productId: 126,
+                    productName: "Samsung S22",
+                },
+            ],
+        },
+        {
+            userId: 3,
+            userName: "Akash Kushwaha",
+            orders: [],
+        },
+    ];
+
+    function order(users,orders){
+        let final_arr = []
+        for (let i of users) {
+            let user_obj = {};
+            user_obj.userId = i.id;
+            user_obj.userName = i.name;
+            user_obj.order = [];
+            for (let j of orders) {
+                if (j.userId === i.id) {
+                    let new_obj = {}
+                    new_obj.orderId = j.orderId;
+                    new_obj.productId = j.productId;
+                    new_obj.productName = j.productName;
+                    user_obj.order.push(new_obj)
+                }
+            }
+            final_arr.push(user_obj)
+        }
+        return (final_arr)
+    }
+    function orderV1(users,orders){
+        let final_arr = []
+        for (let i of users) {
+            let user_obj = {};
+            user_obj.userId = i.id;
+            user_obj.userName = i.name;
+            user_obj.order = [];
+            for (let j of orders) {
+                if (j.userId === i.id) {
+                    const{userId,...remaining} = j;
+                    user_obj.order.push(remaining);
+                }
+            }
+            final_arr.push(user_obj)
+        }
+        return (final_arr)
+    }
+    console.log(orderV1(users,orders))
+
+</script>
