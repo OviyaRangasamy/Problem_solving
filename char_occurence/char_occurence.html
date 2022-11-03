@@ -1,0 +1,50 @@
+<script>
+    str = "Oviya"
+    function char_occurence(str) {
+        if (typeof (str) !== "string") {
+            return "Enter the valid input!"
+        }
+        let lstr = str.toLowerCase()
+        let obj = {}
+        for (let i of lstr) {
+            if (i !== " ") {
+                if (obj.hasOwnProperty(i) === true) {
+                    obj[i]++
+                }
+                else {
+                    obj[i] = 1;
+                }
+            }
+        }
+        return (obj)
+
+    }
+
+    function char_occurenceV1(str) {
+        if (typeof (str) !== "string") {
+            return "Enter the valid input!"
+        }
+        let lstr = str.toLowerCase()
+        let obj = {}
+        for (let i of lstr) {
+            if (i !== " ") {
+                (obj.hasOwnProperty(i) === true ? obj[i]++ : obj[i] = 1);
+            }
+        }
+        return (obj)
+
+    }
+
+    function char_occurenceV2(params) {
+        if (typeof (str) !== "string") {
+            return "Enter the valid input!"
+        }
+        let lstr = str.toLowerCase()
+        let arr = lstr.split("")
+        let new_arr = arr.reduce((acc, curr) => {
+
+        })
+
+    }
+    console.log(char_occurenceV1("Oviya rangasamy"));
+</script>
