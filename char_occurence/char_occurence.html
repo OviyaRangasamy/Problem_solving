@@ -1,5 +1,16 @@
 <script>
-    str = "Oviya"
+    
+    //Algorithm:
+// - split the string into an array
+// - create an empty object
+// - iterate the array
+// - if the item is space then continue else 
+    // - chk if the item is present in the empty object
+    // - if present increase the count
+    // - else add the item to the object
+// - print the entire object
+
+//     method:1
     function char_occurence(str) {
         if (typeof (str) !== "string") {
             return "Enter the valid input!"
@@ -20,6 +31,7 @@
 
     }
 
+//     method:2
     function char_occurenceV1(str) {
         if (typeof (str) !== "string") {
             return "Enter the valid input!"
@@ -35,16 +47,45 @@
 
     }
 
-    function char_occurenceV2(params) {
+//     method:3
+    function char_occurenceV2(str) {
         if (typeof (str) !== "string") {
             return "Enter the valid input!"
         }
         let lstr = str.toLowerCase()
         let arr = lstr.split("")
         let new_arr = arr.reduce((acc, curr) => {
+            if (curr !== " ") {
+                if (acc.hasOwnProperty(curr) === true) {
+                    acc[curr] += 1;
+                }
+                else {
+                    acc[curr] = 1;
+                }
+            }
+            return acc;
 
-        })
 
+        }, {})
+
+        return new_arr;
     }
-    console.log(char_occurenceV1("Oviya rangasamy"));
+
+//     method:4
+    function char_occurenceV3(str) {
+        if (typeof (str) !== "string") {
+            return "Enter the valid input!"
+        }
+        let lstr = str.toLowerCase()
+        let arr = lstr.split("")
+        let new_arr = arr.reduce((acc, curr) => {
+            if (curr !== " ") {
+                (acc.hasOwnProperty(curr) === true)? acc[curr] += 1:acc[curr] = 1;
+            }
+            return acc;
+        }, {})
+
+        return new_arr;
+    }
+   char_occurenceV3("Oviya rangasamy")
 </script>
