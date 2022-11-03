@@ -40,47 +40,9 @@
             productName: "Samsung S22",
         },
     ];
-
-    const final = [
-        {
-            userId: 1,
-            userName: "Ankit Jain",
-            orders: [
-                {
-                    orderId: 101,
-                    productId: 123,
-                    productName: "Apple iPhone 14 Pro Max",
-                },
-                {
-                    orderId: 102,
-                    productId: 124,
-                    productName: "Apple MacBook Pro",
-                },
-                {
-                    orderId: 103,
-                    productId: 125,
-                    productName: "Apple iWatch 7 series",
-                },
-            ],
-        },
-        {
-            userId: 2,
-            userName: "Shankar Sahu",
-            orders: [
-                {
-                    orderId: 104,
-                    userId: 2,
-                    productId: 126,
-                    productName: "Samsung S22",
-                },
-            ],
-        },
-        {
-            userId: 3,
-            userName: "Akash Kushwaha",
-            orders: [],
-        },
-    ];
+    
+    
+//     method :1
 
     function order(users,orders){
         let final_arr = []
@@ -102,6 +64,8 @@
         }
         return (final_arr)
     }
+    
+//     method :2
     function orderV1(users,orders){
         let final_arr = []
         for (let i of users) {
@@ -119,6 +83,6 @@
         }
         return (final_arr)
     }
-    console.log(orderV1(users,orders))
+ 
 
 </script>
