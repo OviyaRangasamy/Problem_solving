@@ -1,0 +1,37 @@
+<script>
+
+    // To find the list of employees whose salary > 60000
+    
+    let employees = [
+        {
+            "id": 11,
+            "name": "Abhinav",
+            "salary": 75000
+        },
+        {
+            "id": 2131,
+            "name": "Raj",
+            "salary": 62000
+        },
+        {
+            "id": 3012,
+            "name": "Raj",
+            "salary": 32000
+        }]
+
+
+    function max_salary(arr) {
+        let emp_arr = []
+        for (let i of employees) {
+            if (i.salary >= 60000) {
+                emp_arr.push(i);
+            }
+        }
+        return emp_arr;
+    }
+   max_salary(employees);
+   
+
+    let new_details = employees.filter((item) => (item.salary >= 60000));
+    console.log("OR filter details", new_details);
+</script>
