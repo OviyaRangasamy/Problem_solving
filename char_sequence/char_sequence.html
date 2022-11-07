@@ -1,0 +1,43 @@
+<script>
+    // character sequence count
+
+    // input = "AAAABBBCCDAABB"
+    // output = "A4B3C2D1A2B2"
+
+    let str = "AAAABBBCCDAABB";
+    function char_sequence(str) {
+        let lstr = str.toUpperCase()
+        let result_string = "";
+        let count = 1;
+
+        for (let i = 0; i < (lstr.length); i++) {
+            if (lstr[i] === lstr[i + 1]) {
+                count++
+            }
+            else {
+                result_string = result_string + lstr[i] + count
+                count = 1
+            }
+        }
+        return(result_string)
+    }
+    
+
+    function char_sequenceV1(str) {
+        let lstr = str.toUpperCase()
+        let result_string = "";
+        let count = 1;
+        for (let i = 0; i < (lstr.length); i++) {
+             (lstr[i] === lstr[i + 1])? count++ : (result_string = result_string + lstr[i] + count,count=1);
+        }     
+            
+        return(result_string)
+    }
+
+
+    
+console.log(char_sequenceV1(str));
+
+
+
+</script>
