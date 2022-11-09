@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="1">Caterpillar
+        <div id="2">Butterfly
+            <a id="3"></a>
+        </div>
+    </div>
+    <div id="4">
+        <div id="5">
+            <a id="6"></a>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function get_ElementById(elem, id) {
+
+        let element_array = [elem];
+        let result_value;
+        recursion(element_array);
+
+        function recursion(element_array) {
+
+            for (let i = 0; i < element_array.length; i++) {
+                // console.log(element_array[i])
+                if (element_array[i].id === id) {
+                    result_value = element_array[i];
+                    break;
+                }
+                else {
+                    element_array = element_array[i].children
+                    recursion(element_array);
+                }
+            }
+        }
+        return (result_value == null) ? "The Given Id is not present" : result_value;
+
+    }
+
+    console.log((get_ElementById(document.body, "2")));
+
+</script>
