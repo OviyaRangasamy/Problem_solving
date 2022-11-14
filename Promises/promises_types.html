@@ -1,0 +1,61 @@
+<script>
+    let A = async () => {
+        return new Promise((resolve, reject) => {
+            resolve("A");
+        })
+    }
+    let B = async () => {
+        return new Promise((resolve, reject) => {
+            resolve("B");
+        })
+    }
+    let C = async () => {
+        return new Promise((resolve, reject) => {
+            resolve("C");
+        })
+    }
+    let D = async () => {
+        return new Promise((resolve, reject) => {
+            reject("D");
+        })
+    }
+    let E = async () => {
+        return new Promise((resolve, reject) => {
+            resolve("E");
+        })
+    }
+
+    let prom_arr = [A(), B(), C(), D(), E()]
+    let prom_type_any = async () => {
+        let prom_any = await Promise.any(prom_arr).catch((err) => null)
+        console.log("Promises any:", prom_any)
+        if (!prom_any) {
+            return null
+        }
+        return prom_any
+    }
+
+    prom_type_any();
+
+    let prom_type_all = async () => {
+        let prom_all = await Promise.all(prom_arr).catch((err) => null)
+        console.log("Promises all:", prom_all)
+        if (!prom_all) {
+            return null
+        }
+        return prom_all
+    }
+
+    prom_type_all();
+
+    let prom_type_allsettled = async () => {
+        let prom_allsettled = await Promise.allSettled(prom_arr).catch((err) => null)
+        console.log("Promises all settled:", prom_allsettled)
+        if (!prom_allsettled) {
+            return null
+        }
+        return prom_allsettled
+    }
+
+    prom_type_allsettled();
+</script>
