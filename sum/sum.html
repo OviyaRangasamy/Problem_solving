@@ -1,0 +1,58 @@
+<script>
+    /*
+    *
+    * Get the length of the num1 and num2 in i and j respectively
+    * set result as empty string and carry as zero
+    * initialize two variables to store the integer value of num1 and num2
+    * run a loop 
+    * get the values from the last
+    * add the numbers anfd the carry
+    * if the number > 10 set carry = 1 and sum = sum-10 to get the last digit
+    * else set caary = 0 and 
+    * finally add the sum to the empty string and return the result
+    * length value of i and j will be decremented by 1
+    * 
+    */
+    var addStrings = function (num1, num2) {
+        let i = num1.length - 1;
+        let j = num2.length - 1;
+        let result = "";
+        let carry = 0;
+        let val1;
+        let val2;
+        let sum;
+        while (i >= 0 || j >= 0) {
+            if (i < 0) {
+                val1 = 0;
+            } else {
+                val1 = num1[i] * 1;
+            }
+            if (j < 0) {
+                val2 = 0;
+            } else {
+                val2 = num2[j] * 1;
+            }
+            sum = val1 + val2 + carry;
+            if (sum > 9) {
+                carry = 1;
+                sum = sum - 10
+            } else {
+                carry = 0;
+            }
+            result = sum + result
+            i--;
+            j--;
+        }
+        if (carry !== 0) {
+            result = carry + result;
+        }
+
+        return result;
+
+    }
+
+    // console.log(addStrings("999", "99"))
+    // console.log(addStrings("9", "17"))
+    // console.log(addStrings("9", "9"))
+    // console.log(addStrings("9333852702227987", "85731737104263"));
+</script>
