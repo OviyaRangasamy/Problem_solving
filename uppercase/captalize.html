@@ -1,0 +1,18 @@
+<script>
+    let sentence = "my name is Ankit jain"
+    let capitalize = (sentence) => {
+        let empty = ""
+        for (let i in sentence) {
+            if (sentence[i - 1] === " " || i == 0) {
+                empty += sentence[i].toUpperCase();
+            }
+
+            else {
+                empty += sentence[i];
+            }
+
+        }
+       return(empty)
+    }
+console.log(capitalize("this is a beautiful butterfly"))
+</script>
