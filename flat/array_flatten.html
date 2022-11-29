@@ -1,0 +1,68 @@
+<script>
+    /**
+     * create an empty array
+     * iterate the array
+     * if the element in the array is an array 
+     * iterate the array and add the value to the resultant array
+     * else add the value to the resultant array
+     * 
+     * 
+     * input = [1,2,[3,4],5,[6,7,8,9],6]
+     * const a = [ 1,2,[3, 4, [3, 4, [3, 4], [3, 4]]],
+        5,[6, 7, 8, [3, 4], 9], 6,[3, 4, [3, 4, [3, 4, [3, 4]]]],
+        ];
+     * output =[1,2,3,4,5,6,7,8,9,6]
+     */
+
+
+    function flat_array(arr) {
+        let result = []
+        for (let i of arr) {
+            if (Array.isArray(i) === true) {
+                for (let j of i) {
+                    result.push(j)
+                }
+            }
+            else {
+                result.push(i)
+            }
+        }
+        return result;
+    }
+
+    // console.log(flat_array([
+    //     1,
+    //     2,
+    //     [3, 4, [3, 4, [3, 4], [3, 4]]],
+    //     5,
+    //     [6, 7, 8, [3, 4], 9],
+    //     6,
+    //     [3, 4, [3, 4, [3, 4, [3, 4]]]],
+    // ]))
+
+
+
+
+    function flat_arrayV1(arr, newArray) {
+        for (let i of arr) {
+            if (Array.isArray(i) === false) {
+                newArray.push(i)
+            }
+            else {
+                flat_arrayV1(i, newArray)
+            }
+        }
+        return newArray
+
+    }
+    let newArray = []
+    console.log(flat_arrayV1([
+        1,
+        2,
+        [3, 4, [3, 4, [3, 4], [3, 4]]],
+        5,
+        [6, 7, 8, [3, 4], 9],
+        6,
+        [3, 4, [3, 4, [3, 4, [3, 4]]]],
+    ], newArray))
+</script>
