@@ -1,0 +1,41 @@
+<script>
+    /**
+     * 1.iterate the loop from 1 10 100
+     * 2.if the number divisible by both 5 and three print fizzbuzz 
+     * 3.if the number divisible by 3 print fizz
+     * 4.if number divisible by 5 print buzz
+     * 5.else print the number
+     * 
+    */
+
+    function fizzbuzz() {
+        for (let i = 1; i <= 100; i++) {
+            if (i % 3 === 0 && i % 5 === 0) {
+                console.log("FizzBuzz")
+
+            }
+            else if (i % 3 === 0) {
+                console.log("Fizz")
+            }
+            else if (i % 5 === 0) {
+                console.log("Buzz")
+
+            }
+            else {
+                console.log(i)
+            }
+        }
+    }
+
+    // fizzbuzz()
+
+
+   function fizzbuzzV1(){
+    for (let i = 1; i < 101;) console.log((i++ % 3 ? '' : 'fizz') + (i % 5 ? '' : 'buzz') || i)
+   }  
+
+fizzbuzzV1()
+</script>
+Uppercase of each first letter of a words
+Input : my name is Ankit jain
+Output - My Name Is Ankit Jain
