@@ -1,0 +1,67 @@
+<script>
+    function sum(a, b) {
+        let tot = a + b;
+        return tot
+    }
+
+    function sum1(a, b, c) {
+        let tot = a + b + c;
+        return tot
+    }
+
+    function sum2(...argds) {
+        let sum = 0
+        // console.log(argds)
+        for (let i in argds) {
+            console.log(i)
+            sum += argds[i]
+        }
+        return sum
+    }
+    // console.log(sum2(1,2,3,4,4))
+
+
+    /**
+    * create a normal function 
+    * pass the arguments 
+    * in the parameter use a rest operator with a variable name (args)
+    * check if the args length is not 0
+        * check if all the arguments in the args are number if true
+            * create a sum variable and set to 0
+            * run a for loop on the args
+            * add every iterated value with the sum
+            * return the sum
+        * else throw a message input is only number
+    * else throw a message that input cannot be empty  
+    */
+
+
+
+    function sumv2(...argds) {
+        // console.log(argds.length)
+        if (argds.length === 0 || argds[0] === null || argds[0] === undefined) {
+            return "Provide a proper input"
+        }
+
+        else {
+            let sum = 0
+            for (let i in argds) {
+                // console.log(typeof(argds[i]) )
+                if (typeof(argds[i]) === "number") {
+                    // console.log(i)
+                    sum += argds[i]
+                }
+                else{
+                    return "The input should be number"
+                }
+            }
+            return sum
+        }
+
+    }
+    console.log(sumv2(1, 2, "arr", 4, 4))
+    console.log(sumv2())
+    console.log(sumv2(undefined))
+    console.log(sumv2(null))
+
+</script>
