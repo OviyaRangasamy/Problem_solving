@@ -1,0 +1,31 @@
+<script>
+
+
+/**
+ * Get the string and value
+ * pass the string and value in the function
+ * change the string into array using split()
+ * iterate the array 
+ * if the value = target return true
+ * else false
+ */ 
+    let sentence = "Hello World"
+    let target = "World"
+
+    function valuein(sentence, target) {
+        let arr = sentence.split(" ")
+        let val;
+        for (let i of arr) {
+            console.log(i, target)
+            if (i === target) {
+                val = true
+                break;
+            } else {
+                val = false
+            }
+        }
+        return val
+    }
+
+    console.log(valuein(sentence, target));
+</script>
