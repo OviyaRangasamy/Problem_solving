@@ -1,19 +1,68 @@
 <script>
+    /**
+     * Get a string value
+     * reverse the string using iteration
+     * if the reersed string is samme as the given string then true 
+     * else false
+     */
 
-    function palindrome(str) {
-        var org_str = str;
-        var emp_str = "";
-        for (let i = str.length; i > 0; i--) {
-            emp_str += str[i - 1];
-        }
-        console.log(emp_str);
-        if (emp_str === org_str) {
-            return ("palindrome");
-        }
-        return ("not palindrome")
 
+
+    function palindrome(val) {
+        let name = val.toLowerCase()
+        if (typeof (name) !== "string" || name === "") {
+            return "Enter a string input"
+        }
+        let emptyString = ""
+        for (let i of name) {
+            emptyString = i + emptyString
+        }
+
+        if (name === emptyString) {
+            return "It is Palindrome"
+        }
+        else {
+            return "It is not Palindrome"
+        }
     }
 
-    console.log(palindrome("malayalam"));
-    console.log(palindrome("zone"));
+    console.log(palindrome("Madam"))
+    console.log(palindrome("Avdhids"))
+
+
+    /**
+    * Get a string value
+    * reverse the string using iteration
+    * if the reersed string is samme as the given string then true 
+    * else false
+    */
+
+
+
+    function palindromeV1(val) {
+        let value = val.split(" ")
+        let valid_array = []
+        let count = 0
+
+        for (let i of value) {
+            let name = i.toLowerCase()
+            let emptyString = ""
+            if (name.length !== 1) {
+                for (let j of name) {
+                    emptyString = j + emptyString
+                }
+
+                if (name === emptyString) {
+                    count++;
+                    valid_array.push(name)
+                }
+            }
+        }
+        return (count, valid_array)
+    }
+
+    // console.log(palindrome("Madam"))
+    // console.log(palindrome("Avdhids"))
+    console.log(palindromeV1("Hello sir how are you at your level I am good bob"))
+    console.log(palindromeV1("Hello sir how are you at your level I am good MaDam"))
 </script>
