@@ -1,0 +1,24 @@
+<script>
+    function product(a){
+        return function(b){
+            return function(c){
+                return a*b*c
+            }
+        }
+    }
+    console.log(product(10)(10)(10))
+    
+
+    // function currying(a){
+    //     return function(b){
+    //       if(!b){
+    //         return a
+    //       }
+    //       else{
+    //         return currying(a+b)
+    //       }
+    //     }
+    // }
+
+    // console.log(currying(10)(20)(30)());
+</script>
