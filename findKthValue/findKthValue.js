@@ -3,6 +3,9 @@
  * sort the array
  * get the smallest value as the array[k-1]
  * get the largest as array[length - k]
+ * input = [2, 1, 4, 3, 6, 5, 7]
+ * k value = 3
+ * output = {small: 3, large: 5}
  */
 
 function findKthValue(arr, k) {
